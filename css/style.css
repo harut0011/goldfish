@@ -1,0 +1,100 @@
+* {
+  color: #ebebeb;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+}
+.video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -999;
+}
+.video:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+header .container .logo-name {
+  display: flex;
+}
+header .container .logo-name img {
+  margin-top: 20px;
+}
+header .container .logo-name h1 {
+  color: #feeb68;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-size: 5vw;
+  margin: 0;
+  padding: 0;
+}
+header .container .menu {
+  display: flex;
+}
+header .container .menu #menu {
+  display: block;
+  padding: 10px 15px;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+header .container .menu .menu-icon {
+  overflow: hidden;
+}
+header .container .menu .menu-icon-item {
+  display: block;
+  width: 45px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+header .container .menu .menu-icon-item hr {
+  width: 100%;
+  border: none;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 11px 0;
+}
+header .container .menu .menu-icon-item:nth-child(2) {
+  transform: translateX(15px);
+}
+header .container .menu .menu-icon-item:nth-child(3) {
+  transform: translateX(30px);
+}
+header .container .menu .menu-icon:hover, header .container .menu .menu-icon:hover .menu-icon-item {
+  cursor: pointer;
+}
+header .container .menu .menu-icon:hover:nth-child(2), header .container .menu .menu-icon:hover .menu-icon-item:nth-child(2) {
+  transform: translateX(0);
+}
+header .container .menu .menu-icon:hover:nth-child(3), header .container .menu .menu-icon:hover .menu-icon-item:nth-child(3) {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=style.css.map */
