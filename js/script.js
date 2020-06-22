@@ -1,20 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const main = document.querySelector('.main');
+    const menuIcon = document.querySelector('.menu-icon')
+    const menuIconItems = document.querySelectorAll('.menu-icon-item')
 
-	
-	setTimeout(() => {;
-		const mainEl = document.createElement('p');
-		mainEl.textContent = "Hello";
-
-		main.replaceChild(mainEl, document.querySelector('p'))
-	}, 3000);
-
-	let observer = new MutationObserver(mutations => {
-		console.log('hey')
-	});
-
-	observer.observe(main, {
-		childList: true,
-		subtree: true
-	})
+    menuIcon.addEventListener('click', () => {
+        for (let a = 0; a < menuIconItems.length; a++) {
+            menuIconItems[a].style.top = '27%';
+        }
+    })
+    
 })

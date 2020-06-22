@@ -57,35 +57,39 @@ header .container .logo-name h1 {
 }
 header .container .menu {
   display: flex;
+  position: relative;
 }
 header .container .menu #menu {
   display: block;
-  padding: 10px 15px;
+  padding: 10px 85px;
   font-size: 30px;
   font-family: "Montserrat", sans-serif;
 }
 header .container .menu .menu-icon {
   overflow: hidden;
+  position: relative;
+  width: 45px;
 }
 header .container .menu .menu-icon-item {
   display: block;
-  width: 45px;
+  width: 100%;
   transition: 0.5s;
   pointer-events: none;
-}
-header .container .menu .menu-icon-item hr {
-  width: 100%;
-  border: none;
   height: 3px;
   background-color: #fff;
   border-radius: 20px;
   margin: 11px 0;
+  position: absolute;
+  top: 0;
+  display: block;
 }
 header .container .menu .menu-icon-item:nth-child(2) {
   transform: translateX(15px);
+  top: 27%;
 }
 header .container .menu .menu-icon-item:nth-child(3) {
   transform: translateX(30px);
+  top: 54%;
 }
 header .container .menu .menu-icon:hover, header .container .menu .menu-icon:hover .menu-icon-item {
   cursor: pointer;
@@ -95,6 +99,13 @@ header .container .menu .menu-icon:hover:nth-child(2), header .container .menu .
 }
 header .container .menu .menu-icon:hover:nth-child(3), header .container .menu .menu-icon:hover .menu-icon-item:nth-child(3) {
   transform: translateX(0);
+}
+header .container .menu img {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  z-index: -1;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

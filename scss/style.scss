@@ -39,10 +39,8 @@
     margin: 0 auto;
 }
 
-//
+// logo and all menu
 header {
-
-
     .container {
         display: flex;
         justify-content: space-between;
@@ -68,39 +66,45 @@ header {
         }
 
         .menu {
-        	display: flex;
-        	#menu {
-        		display: block;
-        		padding: 10px 15px;
-        		font-size: 30px;
-        		font-family: 'Montserrat', sans-serif;
-        	}
+            display: flex;
+            position: relative;
+
+            #menu {
+                display: block;
+                padding: 10px 85px;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
             .menu-icon {
                 overflow: hidden;
+                position: relative;
+                width: 45px;
 
                 &-item {
                     display: block;
-                    width: 45px;
+                    width: 100%;
                     transition: .5s;
                     pointer-events: none;
-
-                    hr {
-                        width: 100%;
-                        border: none;
-                        height: 3px;
-                        background-color: #fff;
-                        border-radius: 20px;
-                        margin: 11px 0;
-                    }
+                    height: 3px;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    margin: 11px 0;
+                    position: absolute;
+                    top: 0;
+                    display: block;
 
                     &:nth-child(2) {
                         transform: translateX(15px);
+                        top: 27%;
                     }
 
                     &:nth-child(3) {
-                        transform: translateX(30px)
+                        transform: translateX(30px);
+                        top: 54%;
                     }
-
+                    
+                    
                 }
 
 
@@ -116,6 +120,14 @@ header {
                         transform: translateX(0)
                     }
                 }
+            }
+
+            img {
+                position: absolute;
+                right: -15px;
+                top: -10px;
+                z-index: -1;
+                opacity: 1;
             }
         }
     }
