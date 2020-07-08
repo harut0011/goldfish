@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuIcon.addEventListener('click', () => {
         for (let a = 0; a < menuIconItems.length; a++) {
-            menuIconItems[a].style.top = '27%';
+            menuIconItems[a].classList.toggle('menu-on-st1')
+            setTimeout(() => {
+            	menuIconItems[a].classList.toggle('menu-on-st2')
+            }, 300)
         }
     })
-    
 })

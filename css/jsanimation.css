@@ -1,0 +1,13 @@
+.menu-on-st1 {
+  top: 14.5% !important;
+  transform: translateX(0) !important;
+}
+
+.menu-on-st2:nth-child(1) {
+  transform: rotate(45deg) !important;
+}
+.menu-on-st2:nth-child(2), .menu-on-st2:nth-child(3) {
+  transform: rotate(135deg) !important;
+}
+
+/*# sourceMappingURL=jsanimation.css.map */
