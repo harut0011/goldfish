@@ -190,14 +190,8 @@ main section .container .content .button:hover {
 .section2 .container .imgs div.img:before {
   content: "";
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 20px;
-  height: 50px;
-  transform: rotate(-50deg);
   background-color: #fff;
-  filter: blur(5px);
-  border-radius: 50px;
+  filter: blur(1.5px);
 }
 .section2 .container .imgs div.img:nth-child(1) {
   background-image: url(../img/section2-imgs/1.png);
@@ -205,6 +199,28 @@ main section .container .content .button:hover {
   top: 0;
   width: 11vw;
   height: 11vw;
+}
+.section2 .container .imgs div.img:nth-child(1):before {
+  width: 5vw;
+  height: 7.8vw;
+  bottom: 1.5vw;
+  right: 0.8vw;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  transition: 2.8s linear;
+  transform: rotate(-15deg);
+  animation-name: png1anim;
+  animation-duration: 2.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes png1anim {
+  0% {
+    background: linear-gradient(-15deg, white 0%, rgba(255, 255, 255, 0) 20%);
+  }
+  100% {
+    background: linear-gradient(-15deg, white 0%, white 20%);
+  }
 }
 .section2 .container .imgs div.img:nth-child(2) {
   background-image: url(../img/section2-imgs/2.png);
