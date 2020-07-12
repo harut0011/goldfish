@@ -108,6 +108,7 @@ header .container .menu .menu-icon-item {
   background-image: url("../img/menu-ic.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   transform: rotateY(0);
 }
 header .container .menu .menu-icon-item:nth-child(2) {
@@ -182,16 +183,17 @@ main section .container .content .button:hover {
   height: 35vw;
 }
 .section2 .container .imgs div.img {
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
 }
-.section2 .container .imgs div.img:before {
+.section2 .container .imgs div.img:before, .section2 .container .imgs div.img:after {
   content: "";
   position: absolute;
   background-color: #fff;
-  filter: blur(1.5px);
+  filter: blur(8px);
+  overflow: hidden;
 }
 .section2 .container .imgs div.img:nth-child(1) {
   background-image: url(../img/section2-imgs/1.png);
@@ -201,25 +203,31 @@ main section .container .content .button:hover {
   height: 11vw;
 }
 .section2 .container .imgs div.img:nth-child(1):before {
-  width: 5vw;
+  width: 5.2vw;
   height: 7.8vw;
-  bottom: 1.5vw;
-  right: 0.8vw;
-  border: 1px solid #fff;
-  border-radius: 100px;
-  transition: 2.8s linear;
+  bottom: 1.55vw;
+  right: 0.9vw;
   transform: rotate(-15deg);
+  background: linear-gradient(330deg, rgba(0, 0, 0, 0) 35%, rgba(255, 255, 255, 0.6026785714) 50%, rgba(0, 0, 0, 0) 65%);
+  background-size: 100% 100%;
+  background-position: 0 9vw;
+  background-repeat: no-repeat;
+  border-radius: 100px;
   animation-name: png1anim;
-  animation-duration: 2.8s;
-  animation-timing-function: linear;
+  animation-duration: 6.8s;
   animation-iteration-count: infinite;
 }
 @keyframes png1anim {
   0% {
-    background: linear-gradient(-15deg, white 0%, rgba(255, 255, 255, 0) 20%);
+    background-position: 0 9vw;
+    background-size: 80% 80%;
+  }
+  50% {
+    background-size: 120% 120%;
   }
   100% {
-    background: linear-gradient(-15deg, white 0%, white 20%);
+    background-size: 80% 80%;
+    background-position: 0 -10vw;
   }
 }
 .section2 .container .imgs div.img:nth-child(2) {
@@ -228,12 +236,131 @@ main section .container .content .button:hover {
   width: 40vw;
   height: 15vw;
 }
+.section2 .container .imgs div.img:nth-child(2):before {
+  width: 0.7vw;
+  height: 2vw;
+  bottom: 7.5vw;
+  right: 10vw;
+  animation-name: png2anim;
+  animation-duration: 4.8s;
+  animation-iteration-count: infinite;
+  filter: blur(4px);
+}
+@keyframes png2anim {
+  0% {
+    bottom: 7.5vw;
+    right: 10vw;
+    transform: rotate(20deg);
+    opacity: 0;
+  }
+  20% {
+    bottom: 7.5vw;
+    right: 10vw;
+    transform: rotate(20deg);
+    opacity: 1;
+  }
+  100% {
+    bottom: 5.5vw;
+    right: 12vw;
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+}
+.section2 .container .imgs div.img:nth-child(2):after {
+  width: 0.7vw;
+  height: 1.8vw;
+  top: 1vw;
+  right: 12.7vw;
+  filter: blur(5px);
+  animation-name: png2anim2;
+  animation-duration: 4.8s;
+  animation-iteration-count: infinite;
+}
+@keyframes png2anim2 {
+  0% {
+    top: 1vw;
+    right: 12.7vw;
+    opacity: 0;
+  }
+  20% {
+    top: 1.4vw;
+    right: 12.5vw;
+    opacity: 1;
+  }
+  100% {
+    top: 2.7vw;
+    right: 13vw;
+    opacity: 0;
+  }
+}
 .section2 .container .imgs div.img:nth-child(3) {
   background-image: url(../img/section2-imgs/3.png);
   right: 0;
   top: 0;
   width: 15vw;
   height: 15vw;
+}
+.section2 .container .imgs div.img:nth-child(3):before {
+  width: 0.7vw;
+  height: 1.1vw;
+  right: 3vw;
+  top: 0.8vw;
+  filter: blur(5px);
+  transform: rotate(-35deg);
+  animation-name: png3anim;
+  animation-duration: 4.8s;
+  animation-iteration-count: infinite;
+}
+@keyframes png3anim {
+  0% {
+    right: 3vw;
+    top: 0.8vw;
+    opacity: 0;
+  }
+  20% {
+    right: 2.9vw;
+    top: 1vw;
+    opacity: 1;
+  }
+  40% {
+    top: 1.5vw;
+    opacity: 1;
+  }
+  100% {
+    right: 3.4vw;
+    top: 1.7vw;
+    opacity: 0;
+  }
+}
+.section2 .container .imgs div.img:nth-child(3):after {
+  width: 0.7vw;
+  height: 1.1vw;
+  right: 2.8vw;
+  bottom: 4.5vw;
+  transform: rotate(35deg);
+  animation-name: png3anim2;
+  animation-duration: 4.8s;
+  animation-iteration-count: infinite;
+}
+@keyframes png3anim2 {
+  0% {
+    transform: rotate(35deg);
+    right: 2.4vw;
+    bottom: 4.5vw;
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(68deg);
+    right: 2.05vw;
+    bottom: 3.7vw;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(78deg);
+    right: 2.05vw;
+    bottom: 3.3vw;
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

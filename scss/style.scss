@@ -1,11 +1,13 @@
-@mixin bgImage($pos, $size) {
+@mixin bg($pos, $size, $rep) {
     background-size: $size;
     background-position: $pos;
+    background-repeat: $rep
 }
 
-@mixin pnganim($w, $h) {
-    width: $w;
-    height: $h
+@mixin animation($name, $dur, $count) {
+    animation-name: $name;
+    animation-duration: $dur;
+    animation-iteration-count: $count;
 }
 
 * {
@@ -114,8 +116,9 @@ header {
                     top: 0;
                     display: block;
                     background-image: url('../img/menu-ic.png');
-                    @include bgImage(center,
-                    cover);
+                    @include bg(center,
+                    cover,
+                    no-repeat);
                     transform: rotateY(0);
                     &:nth-child(2) {
                         transform: translateX(15px);
@@ -205,15 +208,17 @@ main {
             width: 120vw;
             height: 35vw;
             div.img {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: contain;
+                @include bg(center,
+                contain,
+                no-repeat);
                 position: absolute;
-                &:before {
+                &:before,
+                &:after {
                     content: '';
                     position: absolute;
                     background-color: #fff;
-                    filter: blur(1.5px)
+                    filter: blur(8px);
+                    overflow: hidden;
                 }
                 &:nth-child(1) {
                     background-image: url(../img/section2-imgs/1.png);
@@ -222,25 +227,31 @@ main {
                     width: 11vw;
                     height: 11vw;
                     &:before {
-                        width: 5vw;
+                        width: 5.2vw;
                         height: 7.8vw;
-                        bottom: 1.5vw;
-                        right: .8vw;
-                        border: 1px solid #fff;
-                        border-radius: 100px;
-                        transition: 2.8s linear;
+                        bottom: 1.55vw;
+                        right: .9vw;
                         transform: rotate(-15deg);
-                        animation-name: png1anim;
-                        animation-duration: 2.8s;
-                        animation-timing-function: linear;
-                        animation-iteration-count: infinite;
+                        background: linear-gradient(330deg, rgba(0, 0, 0, 0) 35%, rgba(255, 255, 255, 0.6026785714285714) 50%, rgba(0, 0, 0, 0) 65%);
+                        @include bg(0 9vw,
+                        100% 100%,
+                        no-repeat);
+                        border-radius: 100px;
+                        @include animation(png1anim,
+                        6.8s,
+                        infinite);
                     }
                     @keyframes png1anim {
                         0% {
-                            background: linear-gradient(-15deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%);
+                            background-position: 0 9vw;
+                            background-size: 80% 80%;
+                        }
+                        50% {
+                            background-size: 120% 120%;
                         }
                         100% {
-                            background: linear-gradient(-15deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%);
+                            background-size: 80% 80%;
+                            background-position: 0 -10vw;
                         }
                     }
                 }
@@ -248,14 +259,133 @@ main {
                     background-image: url(../img/section2-imgs/2.png);
                     bottom: 0;
                     width: 40vw;
-                    height: 15vw
+                    height: 15vw;
+                    &:before {
+                        width: .7vw;
+                        height: 2vw;
+                        bottom: 7.5vw;
+                        right: 10vw;
+                        @include animation(png2anim,
+                        4.8s,
+                        infinite);
+                        filter: blur(4px);
+                    }
+                    @keyframes png2anim {
+                        0% {
+                            bottom: 7.5vw;
+                            right: 10vw;
+                            transform: rotate(20deg);
+                            opacity: 0
+                        }
+                        20% {
+                            bottom: 7.5vw;
+                            right: 10vw;
+                            transform: rotate(20deg);
+                            opacity: 1
+                        }
+                        100% {
+                            bottom: 5.5vw;
+                            right: 12vw;
+                            transform: rotate(0deg);
+                            opacity: 0
+                        }
+                    }
+                    &:after {
+                        width: .7vw;
+                        height: 1.8vw;
+                        top: 1vw;
+                        right: 12.7vw;
+                        filter: blur(5px);
+                        @include animation(png2anim2,
+                        4.8s,
+                        infinite);
+                    }
+                    @keyframes png2anim2 {
+                        0% {
+                            top: 1vw;
+                            right: 12.7vw;
+                            opacity: 0
+                        }
+                        20% {
+                            top: 1.4vw;
+                            right: 12.5vw;
+                            opacity: 1
+                        }
+                        100% {
+                            top: 2.7vw;
+                            right: 13vw;
+                            opacity: 0
+                        }
+                    }
                 }
                 &:nth-child(3) {
                     background-image: url(../img/section2-imgs/3.png);
                     right: 0;
                     top: 0;
                     width: 15vw;
-                    height: 15vw
+                    height: 15vw;
+                    &:before {
+                        width: .7vw;
+                        height: 1.1vw;
+                        right: 3vw;
+                        top: .8vw;
+                        filter: blur(5px);
+                        transform: rotate(-35deg);
+                        @include animation(png3anim,
+                        4.8s,
+                        infinite);
+                        @keyframes png3anim {
+                            0% {
+                                right: 3vw;
+                                top: .8vw;
+                                opacity: 0
+                            }
+                            20% {
+                                right: 2.9vw;
+                                top: 1vw;
+                                opacity: 1;
+                            }
+                            40% {
+                                top: 1.5vw;
+                                opacity: 1
+                            }
+                            100% {
+                                right: 3.4vw;
+                                top: 1.7vw;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                    &:after {
+                        width: .7vw;
+                        height: 1.1vw;
+                        right: 2.8vw;
+                        bottom: 4.5vw;
+                        transform: rotate(35deg);
+                        @include animation(png3anim2,
+                        4.8s,
+                        infinite);
+                        @keyframes png3anim2 {
+                            0% {
+                                transform: rotate(35deg);
+                                right: 2.4vw;
+                                bottom: 4.5vw;
+                                opacity: 0
+                            }
+                            50% {
+                                transform: rotate(68deg);
+                                right: 2.05vw;
+                                bottom: 3.7vw;
+                                opacity: 1;
+                            }
+                            100% {
+                                transform: rotate(78deg);
+                                right: 2.05vw;
+                                bottom: 3.3vw;
+                                opacity: 0
+                            }
+                        }
+                    }
                 }
             }
         }
