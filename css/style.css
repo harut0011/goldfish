@@ -363,4 +363,10 @@ main section .container .content .button:hover {
   }
 }
 
+.section3 .conteiner .slider-item {
+  width: 200px;
+  height: 70px;
+  background-color: #fff;
+}
+
 /*# sourceMappingURL=style.css.map */

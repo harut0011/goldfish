@@ -391,3 +391,15 @@ main {
         }
     }
 }
+
+.section3 {
+    .conteiner {
+        .slider {
+            &-item {
+                width: 200px;
+                height: 70px;
+                background-color: #fff;
+            }
+        }
+    }
+}
