@@ -20,6 +20,7 @@
     transition: .5s;
     transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     box-sizing: border-box;
+    outline: none
 }
 
 body::-webkit-scrollbar {
@@ -150,7 +151,6 @@ main {
             justify-content: space-between;
             .content {
                 margin-top: 100px;
-                width: 100vw;
                 h1 {
                     font-size: 5vw;
                     span {
@@ -393,13 +393,50 @@ main {
 }
 
 .section3 {
-    .conteiner {
+    .container {
+        display: block;
+        .content {
+            text-align: center;
+        }
         .slider {
-            &-item {
-                width: 200px;
-                height: 70px;
-                background-color: #fff;
-            }
+            margin: 0 auto;
+        }
+        .slider-container {
+            overflow: hidden;
+        }
+        .slider-translation {
+            display: flex;
+            position: relative;
+            left: 0px;
+            transition: .4s
+        }
+        .slider-item {
+            height: 350px;
+            margin: 0 10px;
+            min-width: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 20px;
+        }
+        .slider-item:nth-child(1) {
+            background-image: url('../img/slider-imgs/ring.jpg');
+        }
+        .slider-item:nth-child(2) {
+            background-image: url('../img/slider-imgs/earring.jpg');
+        }
+        .slider-item:nth-child(3) {
+            background-image: url('../img/slider-imgs/kolie.jpg');
+        }
+        .slider-item:nth-child(4) {
+            background-image: url('../img/slider-imgs/complect.jpg');
+        }
+        .slider-item:nth-child(5) {
+            background-image: url('../img/slider-imgs/brecelet.jpg');
+        }
+        .slider-buttons {
+            margin-top: 80px;
+            text-align: center;
         }
     }
 }
