@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemWidth = container.clientWidth / slidesToShow;
     //all left and right margins of a slide
     const sliderItemMargin = Number(window.getComputedStyle(sliderItems[0]).getPropertyValue("margin-left").replace(/\D+/g, "")) + Number(window.getComputedStyle(sliderItems[0]).getPropertyValue("margin-right").replace(/\D+/g, ""));
-
+    console.log(container.clientWidth)
     for (let b = 0; b < sliderItems.length; b++) {
         sliderItems[b].style.minWidth = `${itemWidth - sliderItemMargin}px`
     }

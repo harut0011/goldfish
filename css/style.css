@@ -107,8 +107,8 @@ header .container .menu .menu-icon-item {
   top: 0;
   display: block;
   background-image: url("../img/menu-ic.png");
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   transform: rotateY(0);
 }
@@ -141,7 +141,7 @@ main section .container .content h1 {
   font-size: 5vw;
 }
 main section .container .content h1 span {
-  font-size: 6vw;
+  font-size: 5.5vw;
   display: inline-block;
   text-align: center;
 }
@@ -179,12 +179,12 @@ main section .container .content .button:hover {
 .section2 .container .imgs {
   position: relative;
   top: 5vw;
-  width: 120vw;
+  width: 42vw;
   height: 35vw;
 }
 .section2 .container .imgs div.img {
-  background-size: contain;
   background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
 }
@@ -209,8 +209,8 @@ main section .container .content .button:hover {
   right: 0.9vw;
   transform: rotate(-15deg);
   background: linear-gradient(330deg, rgba(0, 0, 0, 0) 35%, rgba(255, 255, 255, 0.6026785714) 50%, rgba(0, 0, 0, 0) 65%);
-  background-size: 100% 100%;
   background-position: 0 9vw;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 100px;
   animation-name: png1anim;
@@ -384,7 +384,6 @@ main section .container .content .button:hover {
 .section3 .container .slider-item {
   height: 350px;
   margin: 0 10px;
-  min-width: 300px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -403,11 +402,32 @@ main section .container .content .button:hover {
   background-image: url("../img/slider-imgs/complect.jpg");
 }
 .section3 .container .slider-item:nth-child(5) {
-  background-image: url("../img/slider-imgs/brecelet.jpg");
+  background-image: url("../img/slider-imgs/p1.jpg");
 }
 .section3 .container .slider-buttons {
   margin-top: 80px;
   text-align: center;
+}
+.section3 .container .slider-buttons .slider-prev-button,
+.section3 .container .slider-buttons .slider-next-button {
+  font-size: 3vw;
+  border: none;
+  height: 0;
+  transition: 0.5s;
+}
+.section3 .container .slider-buttons .slider-prev-button:hover,
+.section3 .container .slider-buttons .slider-next-button:hover {
+  color: #feeb68;
+  cursor: pointer;
+}
+
+.section4 .container .imgs .img {
+  width: 30vw;
+  height: 20vw;
+  background-image: url("../img/section4/remont.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */
